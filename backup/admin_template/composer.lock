@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "73ef57617cc111f45ee7f118f8594db1",
+    "packages": [
+        {
+            "name": "outscraper/outscraper",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/outscraper/outscraper-php.git",
+                "reference": "a2c065239393666d925adaa56739e230647a3e17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/outscraper/outscraper-php/zipball/a2c065239393666d925adaa56739e230647a3e17",
+                "reference": "a2c065239393666d925adaa56739e230647a3e17",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "outscraper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Outscraper",
+                    "email": "support@outscraper.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP bindings for the Outscraper API",
+            "homepage": "https://outscraper.com/",
+            "keywords": [
+                "Google Maps scraper",
+                "Google Reviews scraper",
+                "extractor",
+                "google",
+                "google maps",
+                "outscraper",
+                "scrape google maps",
+                "scraper",
+                "webscraper"
+            ],
+            "support": {
+                "issues": "https://github.com/outscraper/outscraper-php/issues",
+                "source": "https://github.com/outscraper/outscraper-php/tree/v2.0.1"
+            },
+            "time": "2022-12-13T00:44:49+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

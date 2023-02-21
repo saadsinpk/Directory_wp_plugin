@@ -1,84 +1,24 @@
 <!-- <?php if (isset($_POST['submit_configuration_form'])) {
             echo "<div class=\"alert alert-primary\" role=\"alert\" style=\"width:100%;background:green;\">
-            This is a primary alert�check it out!
-          </div>";
+  This is a primary alert�check it out!
+</div>";
             include 'script.php';
         }
+
         ?> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 <!-- <link rel="stylesheet" href="select.css"> -->
-<link rel="stylesheet" href="<?php echo esc_url(plugins_url('admin_template/bootstrap.css', dirname(__FILE__))) ?>">
-<link rel="stylesheet" href="<?php echo esc_url(plugins_url('admin_template/style.css', dirname(__FILE__))) ?>">
+<link rel="stylesheet" href="/wp-content/plugins/directory_plugin-master/admin_template/bootstrap.css">
+<link rel="stylesheet" href="/wp-content/plugins/directory_plugin-master/admin_template/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.min.css">
 
 <div class="container my-3">
-
     <div class="panel panel-default">
-        <?php
-        // global $wpdb;
-        // $place_check = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$wpdb->prefix}postmeta WHERE meta_key = %s", "golo-google_review_placeid"));
-        // echo "<pre>";
-        // print_r($place_check);
-        // echo "</pre>";
-        // define( 'MY_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-        // include( MY_PLUGIN_PATH . 'admin_template/vendor/autoload.php');
-
-        // require(plugin_dir_path(__FILE__) . '');
-        // $client = new OutscraperClient('Z29vZ2xlLW9hdXRoMnwxMDQ0NzQwNzkzMjMxNTM2MDIyODB8NDMyZWRiOThkNw');
-
-        // $results = $client->google_maps_search(['restaurants' . ' ' . 'Alabama' . ' ' . 'Brownsville' . ' ' . 'United States'], limit: 10, language: 'en');
-
-        // // echo "<pre>";
-        // // print_r($results);
-        // // echo "</pre>";
-
-        // $external_email = [];
-        // $primary_email = [];
-        // $phone_2 = [];
-
-        // for ($i = 0; $i < count($results[0]); $i++) {
-        //     $site =$results[0][$i]['site'];
-        //     if(isset($site)){
-
-        //         $results_email[$i] = $client->emails_and_contacts([
-        //             "www.dirtyalsseafood.com"
-        //         ]);
-
-        //         $primary_email[$results_email[$i][0]['query']] = isset($results_email[$i][0]['emails'][0]['value']) ? $results_email[$i][0]['emails'][0]['value'] : '';
-
-        //         $external_email[$results_email[$i][0]['query']] = isset($results_email[$i][0]['external_emails'][0]['value']) ? $results_email[$i][0]['external_emails'][0]['value'] : '';
-        //         $phone_2[$results_email[$i][0]['query']] = isset($results_email[$i][0]['phones'][0]['value']) ? $results_email[$i][0]['phones'][0]['value'] : '';
-        //     }
-        // }
-
-        // // Results
-
-        // echo "<pre>";
-        // print_r($external_email);
-        // print_r($primary_email);
-        // print_r($phone_2);
-        // echo "</pre>";
-
-
-
-        ?>
         <?php isset($_SESSION['SUCCESS']) ?  $_SESSION['SUCCESS'] : '' ?>
         <div class="panel-body">
-            <?php
-            global $wpdb;
-
-            // $place_check = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}postmeta WHERE meta_value = 'ChIJX6f6ysiWb4YRbGsL2RZkj8A';");
-            // if($place_check == null){
-            //     echo "NULL";
-            // }else{
-            //     print_r($place_check);
-            // }
-            ?>
-
-            </table>
             <ul class="nav nav-tabs nav-tabs-simple nav-tabs-simple-bottom" id="googleYelpDataContentTabs" role="tablist">
                 <li class="nav-item active">
                     <a class="nav-link active" id="nav2-tab" data-toggle="tab" href="#nav2" role="tab">
@@ -88,6 +28,11 @@
                 <li class="nav-item">
                     <a class="nav-link" id="nav3-tab" data-toggle="tab" href="#nav3" role="tab">
                         <b>Configurations</b>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav4-tab" data-toggle="tab" href="#nav4" role="tab">
+                        <b>Ads Handling</b>
                     </a>
                 </li>
             </ul>
@@ -123,27 +68,27 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Keywords</label>
-                                                        <input required name="nearby_Keywords" id="nearby_Keywords" type="text" class="form-control places-keyword-filter" placeholder="Enter keywords" />
+                                                        <input name="nearby_Keywords" id="nearby_Keywords" type="text" class="form-control places-keyword-filter" placeholder="Enter keywords" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Country</label>
-                                                        <input required name="nearby_Country" id="nearby_Country" type="text" class="country form-control" placeholder="Type a country" value="" />
+                                                        <input name="nearby_Country" id="nearby_Country" type="text" class="country form-control" placeholder="Type a country" value="" />
 
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>State</label>
-                                                        <input required name="nearby_State" id="nearby_State" type="text" class="state form-control" placeholder="Enter a state" />
+                                                        <input name="nearby_State" id="nearby_State" type="text" class="state form-control" placeholder="Enter a state" />
 
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>City</label>
-                                                        <input required name="nearby_City" id="nearby_City" type="text" class="city form-control" placeholder="Enter a city" />
+                                                        <input name="nearby_City" id="nearby_City" type="text" class="city form-control" placeholder="Enter a city" />
 
                                                     </div>
                                                 </div>
@@ -168,8 +113,12 @@
                                                             <label>Category</label>
                                                             <select class="outscrap_category form-control" id="nearby_category" name="input_category">
                                                                 <option value="">Select Category</option>
-                                                                <option value="place-categories" data-value="place-categories">Categories</option>
-                                                                <option value="place-amenities" data-value="place-amenities">Amenities</option>
+                                                                <option value="Post" data-value="Post">Post</option>
+                                                                <option value="Event" data-value="Event">Event</option>
+                                                                <option value="Service" data-value="Service">Service</option>
+                                                                <option value="Restaurant" data-value="Restaurant">Restaurant</option>
+                                                                <option value="Classified" data-value="Classified">Classified</option>
+                                                                <option value="Shop" data-value="Shop">Shop</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -200,13 +149,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Keywords</label>
-                                                        <input required name="text_search_Keywords" id="text_search_Keywords" type="text" class="form-control places-keyword-filter" placeholder="Enter keywords" />
+                                                        <input name="text_search_Keywords" id="text_search_Keywords" type="text" class="form-control places-keyword-filter" placeholder="Enter keywords" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Location</label>
-                                                        <input required name="text_search_Location" id="text_search_Location" type="text" class="form-control places-location-filter" placeholder="Enter a city, state, zip code or an address." value="" />
+                                                        <input name="text_search_Location" id="text_search_Location" type="text" class="form-control places-location-filter" placeholder="Enter a city, state, zip code or an address." value="" />
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -228,10 +177,14 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Category</label>
-                                                            <select class="outscrap_category form-control" id="nearby_category" name="input_category">
+                                                            <select class="outscrap_category form-control" id="text_search_category" name="input_category">
                                                                 <option value="">Select Category</option>
-                                                                <option value="place-categories" data-value="place-categories">Categories</option>
-                                                                <option value="place-amenities" data-value="place-amenities">Amenities</option>
+                                                                <option value="Post" data-value="Post">Post</option>
+                                                                <option value="Event" data-value="Event">Event</option>
+                                                                <option value="Service" data-value="Service">Service</option>
+                                                                <option value="Restaurant" data-value="Restaurant">Restaurant</option>
+                                                                <option value="Classified" data-value="Classified">Classified</option>
+                                                                <option value="Shop" data-value="Shop">Shop</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -268,19 +221,19 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Keywords</label>
-                                                                <input required type="text" class="form-control places-keyword-filter" placeholder="Enter keywords" id="input_keyword" name="input_keyword" />
+                                                                <input type="text" class="form-control places-keyword-filter" placeholder="Enter keywords" id="input_keyword" name="input_keyword" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>State</label>
-                                                                <input required type="text" class="form-control places-location-filter" placeholder="Enter a state or zip code." value="" id="input_state" name="input_state" />
+                                                                <input type="text" class="form-control places-location-filter" placeholder="Enter a state or zip code." value="" id="input_state" name="input_state" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>City</label>
-                                                                <input required type="text" class="form-control places-location-filter" placeholder="Enter a city or an address." value="" id="input_city" name="input_city" />
+                                                                <input type="text" class="form-control places-location-filter" placeholder="Enter a city or an address." value="" id="input_city" name="input_city" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -308,10 +261,14 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Category</label>
-                                                                    <select class="outscrap_category form-control" id="nearby_category" name="input_category">
+                                                                    <select class="outscrap_category form-control" id="outscrap_category" name="input_category">
                                                                         <option value="">Select Category</option>
-                                                                        <option value="place-categories" data-value="place-categories">Categories</option>
-                                                                        <option value="place-amenities" data-value="place-amenities">Amenities</option>
+                                                                        <option value="Post" data-value="Post">Post</option>
+                                                                        <option value="Event" data-value="Event">Event</option>
+                                                                        <option value="Service" data-value="Service">Service</option>
+                                                                        <option value="Restaurant" data-value="Restaurant">Restaurant</option>
+                                                                        <option value="Classified" data-value="Classified">Classified</option>
+                                                                        <option value="Shop" data-value="Shop">Shop</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -349,9 +306,6 @@
                         </div>
                         <div class="cold-md-12">
                             <div class="admin-table">
-                                <div id="listingsLoaderDatatable_processing" style="display: none !important;display: flex;justify-content: center;" class="dataTables_processing">
-                                    <img src="https://i.pinimg.com/originals/48/6a/a0/486aa0fa1658b7522ecd8918908ece40.gif" height="470" alt="">
-                                </div>
                                 <div id="listingsLoaderDatatable_wrapper" class="dataTables_wrapper no-footer">
                                     <style>
                                         .odd {
@@ -366,6 +320,10 @@
                                             display: inline-block;
                                         }
                                     </style>
+                                    <div id="listingsLoaderDatatable_processing" style="display: none;" class="dataTables_processing">
+                                        <img src="https://aws1.discourse-cdn.com/sitepoint/original/3X/e/3/e352b26bbfa8b233050087d6cb32667da3ff809c.gif" height="70" alt="">
+                                        <h5 class="text-center">loading data..</h5>
+                                    </div>
                                     <style>
                                         .pagination li:hover {
                                             cursor: pointer;
@@ -448,8 +406,8 @@
                                     </div>
                                     <div style="display: none;" id="failed" class="text-danger">
                                         <div class="notice-fail-gradient">
-                                            <img src="https://www.freeiconspng.com/thumbs/failure-icon/failure-icon-2.png" alt="tick">
-                                            <p>Failed! Directory Already Exist.</p>
+                                            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freeiconspng.com%2Fimg%2F7115&psig=AOvVaw1PIjO8-nyAsEZSo1DRUPzp&ust=1672264026859000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJiyoYvjmvwCFQAAAAAdAAAAABAT" alt="tick">
+                                            <p>Failed! Directory Listing Failed!</p>
                                         </div>
                                         <p>&nbsp;</p>
                                     </div>
@@ -508,10 +466,10 @@
                             </div>
                         </div>
                         <!-- <div class="col-md-6 nopad" style="position: sticky; top: 40px">
-                          <div id="mapView" style="position: relative;">
-                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.6630893237834!2d67.00740971551608!3d24.84119278406308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33dfc94ef2283%3A0xd29b8cc455121f77!2sUnited%20State%20of%20America%20Consulate%20General%20Karachi!5e0!3m2!1sen!2s!4v1671199490570!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                          </div>
-                          </div> -->
+                <div id="mapView" style="position: relative;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.6630893237834!2d67.00740971551608!3d24.84119278406308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33dfc94ef2283%3A0xd29b8cc455121f77!2sUnited%20State%20of%20America%20Consulate%20General%20Karachi!5e0!3m2!1sen!2s!4v1671199490570!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                </div> -->
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
@@ -534,7 +492,7 @@
                                 <input type="text" class="form-control" name="google_yelp_listings__outscraper_api_key" id="google_yelp_listings__outscraper_api_key" value="<?php echo get_option('outscraper_api_key'); ?>" style="padding-right: 80px;text-overflow: ellipsis;">
                                 <small>You can find a guide about setting up an Outscraper API key. </small>
                             </div>
-                            <!-- <div class="form-group">
+                            <div class="form-group">
                                 <label>Default membership level</label>
                                 <select class="form-control" name="google_yelp_listings__default_membership_level" id="google_yelp_listings__default_membership_level">
                                     <option value="">Select an option</option>
@@ -549,23 +507,23 @@
                                 </select>
                                 <small>Select the default membership level to use for the new listings created with the
                                     generator.</small>
-                            </div> -->
+                            </div>
                         </div>
                         <input type="submit" name="submit_configuration_form" class="btn btn-cta btn-success" id="get_Update" value="Submit">
                         <div class="clearfix"></div>
                     </form>
                 </div>
                 <div class="tab-pane fade" id="nav4" role="tabpanel" aria-labelledby="nav4-tab">
-                    <!-- <form method="post">
+                    <form method="post">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>AD DETAIL</label><small class="text-secondary">Tracking URL/Script</small>
-                                <textarea name="ad_text" class="form-control"><?php ?></textarea>
+                                <textarea name="ad_text" class="form-control"><?php echo get_option('ad_url'); ?></textarea>
                             </div>
                         </div>
                         <input type="submit" name="submit_ad" class="btn btn-cta btn-success" id="get_Update" value="Submit">
                         <div class="clearfix"></div>
-                    </form> -->
+                    </form>
                 </div>
             </div>
         </div>
@@ -684,22 +642,22 @@
 </script>
 
 <!-- <script>
-              jQuery(document).ready(function($) {
-                  $('#listings-search-nearby-layout-tab').click(function() {
-                      $("#placesSearchTextForm")[0].reset();
-                      $("#placesSearchOutscraperForm")[0].reset();
-                  });
-                  $('#listings-search-text-layout-tab').click(function() {
-                      
-                      
-                  });
-                  $('#listings-search-outscraper-layout-tab').click(function() {
-                      
-                      $("#placesSearchNearbyForm")[0].reset();
-                  });
-              })   
-                  
-          </script> -->
+    jQuery(document).ready(function($) {
+        $('#listings-search-nearby-layout-tab').click(function() {
+            $("#placesSearchTextForm")[0].reset();
+            $("#placesSearchOutscraperForm")[0].reset();
+        });
+        $('#listings-search-text-layout-tab').click(function() {
+            
+            
+        });
+        $('#listings-search-outscraper-layout-tab').click(function() {
+            
+            $("#placesSearchNearbyForm")[0].reset();
+        });
+    })   
+        
+</script> -->
 
 <script>
     jQuery(document).ready(function($) {
@@ -751,10 +709,10 @@
                                         '<li data-page="' +
                                         i +
                                         '">\
-                          <span>' +
+                <span>' +
                                         i++ +
                                         '<span class="sr-only">(current)</span></span>\
-                                  </li>'
+			            </li>'
                                     )
                                     .show();
                             } // end for i
@@ -834,16 +792,16 @@
     function table_sort() {
         const styleSheet = document.createElement('style')
         styleSheet.innerHTML = `
-                  .order-inactive span {
-                      visibility:hidden;
-                  }
-                  .order-inactive:hover span {
-                      visibility:visible;
-                  }
-                  .order-active span {
-                      visibility: visible;
-                  }
-              `
+        .order-inactive span {
+            visibility:hidden;
+        }
+        .order-inactive:hover span {
+            visibility:visible;
+        }
+        .order-active span {
+            visibility: visible;
+        }
+    `
         document.head.appendChild(styleSheet)
 
         document.querySelectorAll('th.order').forEach(th_elem => {
