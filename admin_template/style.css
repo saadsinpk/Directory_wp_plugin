@@ -7237,7 +7237,7 @@ input.error {
 }
 
 input[type="checkbox"] {
-    vertical-align: middle
+    vertical-align: text-bottom
 }
 
 input[type="submit"], input[type="button"] {
@@ -12190,9 +12190,4 @@ label {
 }
 .select2-container {
     width: 100% !important;
-}
-
-.load_data_inner input{
-      margin: 2px !important;
-          border-radius: 0px !important;
 }
